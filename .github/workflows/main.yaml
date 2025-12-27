@@ -134,4 +134,4 @@ jobs:
             - name: download artifact
               uses: actions/download-artifact@v4
               with:
-                name: artifact-${{ matrix.python-version }}-${{ matrix.opeartion-system }}
+                name: my-artifact-${{ matrix.python-version }}-${{ matrix.opeartion-system }}
