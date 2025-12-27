@@ -46,7 +46,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                 name: my-artifact-${{ github.run_number }}
-                path: artifact.txt
+                path: artifact-${{ github.run_number }}.txt
             - name: printing envs
               run: |
                 echo 'PORT: ${{env.PORT}}'
