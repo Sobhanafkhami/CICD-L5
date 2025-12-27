@@ -19,14 +19,14 @@ jobs:
         env:
           PORT: ${{ secrets.PORT }}
           PASSWORD: 'taknavazan'
-        runs-on: ubuntu-latest
+        runs-on: ${{ matrix.opeartion-system }}
         steps:
             - name: checkout repository
               uses: actions/checkout@v5
             - name: installing python
               uses: actions/setup-python@v5
               with:
-                   python-version: '3.13'
+                   python-version: ${{ matrix.python-version }}
             - uses: actions/cache@v5
               with:
                 path: ~/.cache/pip
