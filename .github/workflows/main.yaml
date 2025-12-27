@@ -45,7 +45,7 @@ jobs:
             - name: uploading artifact
               uses: actions/upload-artifact@v4
               with:
-                name: my-artifact-${{ github.run_number }}
+                name: my-artifact-${{ matrix.python-version }}
                 path: artifact.txt
             - name: printing envs
               run: |
@@ -130,4 +130,4 @@ jobs:
             - name: download artifact
               uses: actions/download-artifact@v4
               with:
-                name: artifact-${{ github.run_number }}
+                name: artifact-${{ matrix.python-version }}
