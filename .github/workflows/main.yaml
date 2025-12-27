@@ -10,6 +10,11 @@ env:
   PORT: ${{ secrets.PORT }}
 jobs:
   test:
+        strategy:
+          matrix:
+            opeartion-system: [windows-latest, ubuntu-latest]
+            python-version: ['3.10', '3.11', '3.12', '3.13']
+
         environment: test_env
         env:
           PORT: ${{ secrets.PORT }}
